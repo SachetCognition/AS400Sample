@@ -1,0 +1,264 @@
+.*=========================================================================
+.* Help Panel Group: MODYDFR
+.* Description    : Display college data - Help panels
+.* Build          : CRTPNLGRP
+.*=========================================================================
+.*T: Display college data
+.*Z: CRTPNLGRP
+.*
+.*==============================================================================
+:PNLGRP SUBMSGF='*LIBL/Y2USRMSG'
+   TXTMODE = SBCS
+   BIDI = NONE
+ .
+.*------------------------------------------------------------------------------
+:IMPORT PNLGRP=Y2USRUIM name='*'.
+.*------------------------------------------------------------------------------
+:HELP NAME='YDSPFIL'.
+.*------------------------------------------------------------------------------
+:EHELP.
+.* ........................................................................
+:HELP NAME='MODYDFR'.
+Display college data
+.* Extended help
+
+.* Help index
+:P.
+:IMHELP NAME='Y2EXTINTR'.
+.* 'Position your cursor ...'
+:P.
+:SL COMPACT.
+:LI.
+.* Introduction
+:LINK PERFORM='DSPHELP INTRO'.
+&MSG(YUI0003).
+:ELINK.
+
+:LI.
+.* Function keys
+:LINK PERFORM='DSPHELP FUNC1'.
+&MSG(YUI0004).
+:ELINK.
+
+:LI.
+.* Line commands
+:LINK PERFORM='DSPHELP SFLSEL'.
+&MSG(YUI0005).
+:ELINK.
+
+:LI.
+.* Control fields
+:LINK PERFORM='DSPHELP DATA1'.
+&MSG(YUI0007).
+:ELINK.
+
+:LI.
+.* Record fields
+:LINK PERFORM='DSPHELP DATA2'.
+&MSG(YUI0008).
+:ELINK.
+
+:ESL.
+:P.
+.* Extended help INTRO etc is implicitly defined via the HLPARA(*NONE)s in the
+.* DDS, ordered according to 'Sequence' returned from the Name Allocation
+.* program YALCUIMR1C.
+.*
+.* --------------------------------------------------------------------
+:EHELP.
+.* ........................................................................
+:HELP NAME='INTRO'.
+&MSG(YUI0010).&MSG(YUI0002).
+:XH1.&MSG(YUI0010).
+.* Introduction
+
+:IMHELP NAME='Y2INTV'.
+
+.* Positioning function header
+:IMHELP NAME='Y2POS'.
+
+.* Positioning function description for display
+:IMHELP NAME='Y2POSV'.
+.* --------------------------------------------------------------------
+:EHELP.
+.* ........................................................................
+:HELP NAME='FUNC1'.
+&MSG(YUI0014).&MSG(YUI0002).
+:XH1.&MSG(YUI0014).
+.* Function keys - Help
+
+:PARML.
+:PT.F1=Help.
+:PD.
+:PT.F3=Exit.
+:PD.
+:PT.F4=Prompt.
+:PD.
+:PT.F5=Reset.
+:PD.
+:PT.F8=Next page.
+:PD.
+:PT.HELP=Help.
+:PD.
+:PT.ROLLUP=Next page.
+:PD.
+:EPARML.
+
+.* --------------------------------------------------------------------
+:EHELP.
+.* ........................................................................
+:HELP NAME='SFLSEL'.
+&MSG(YUI0015).&MSG(YUI0002).
+:XH1.&MSG(YUI0015).
+.* Line commands - Help
+
+:PARML.
+:PT.5=Zoom#1.
+:PD.
+:EPARML.
+
+.* --------------------------------------------------------------------
+.* --------------------------------------------------------------------
+:EHELP.
+.* ........................................................................
+:HELP NAME='DATA1'.
+&MSG(YUI0017).&MSG(YUI0002).
+:XH1.&MSG(YUI0017).
+.* Control fields - Help
+
+:SL COMPACT.
+:LI.
+:LINK PERFORM='DSPHELP Z2UMC2'.
+Account ID
+:ELINK.
+:ESL.
+
+.* --------------------------------------------------------------------
+:EHELP.
+.* ........................................................................
+:HELP NAME='DATA2'.
+&MSG(YUI0018).&MSG(YUI0002).
+:XH1.&MSG(YUI0018).
+.* Record fields - Help
+
+:SL COMPACT.
+:LI.
+:LINK PERFORM='DSPHELP Z1SEL'.
+*SFLSEL
+:ELINK.
+:LI.
+:LINK PERFORM='DSPHELP Z1UMC2'.
+Account ID
+:ELINK.
+:LI.
+:LINK PERFORM='DSPHELP Z1B9CO'.
+CName
+:ELINK.
+:LI.
+:LINK PERFORM='DSPHELP Z1X8TX'.
+CCity
+:ELINK.
+:LI.
+:LINK PERFORM='DSPHELP Z1X9TX'.
+CState
+:ELINK.
+:LI.
+:LINK PERFORM='DSPHELP Z1CACO'.
+CPinCode
+:ELINK.
+:ESL.
+.*------------------------------------------------------------------------------
+.*------------------------------------------------------------------------------
+.* Field level help
+.* Generator copies in each field as an individual Help Module  here.
+.*==============================================================================
+:EHELP.
+:HELP NAME='Z2UMC2'.
+Account ID&MSG(YUI0002).
+:XH2.Account ID
+:DL.
+:DT.
+Account ID
+:DD.
+&MSG(YUI0041).
+:EDL.
+:P.
+Identification assign to the account.
+
+:EHELP.
+.* ........................................................................
+:HELP NAME='Z1SEL'.
+*SFLSEL&MSG(YUI0002).
+:XH2.*SFLSEL
+:DL.
+:DT.
+Opt
+:DD.
+&MSG(YUI0041).
+:EDL.
+
+:EHELP.
+.* ........................................................................
+:HELP NAME='Z1UMC2'.
+Account ID&MSG(YUI0002).
+:XH2.Account ID
+:DL.
+:DT.
+Account ID
+:DD.
+&MSG(YUI0042).
+:EDL.
+:P.
+Identification assign to the account.
+
+:EHELP.
+.* ........................................................................
+:HELP NAME='Z1B9CO'.
+CName&MSG(YUI0002).
+:XH2.CName
+:DL.
+:DT.
+CName
+:DD.
+&MSG(YUI0042).
+:EDL.
+
+:EHELP.
+.* ........................................................................
+:HELP NAME='Z1X8TX'.
+CCity&MSG(YUI0002).
+:XH2.CCity
+:DL.
+:DT.
+CCity
+:DD.
+&MSG(YUI0042).
+:EDL.
+
+:EHELP.
+.* ........................................................................
+:HELP NAME='Z1X9TX'.
+CState&MSG(YUI0002).
+:XH2.CState
+:DL.
+:DT.
+CState
+:DD.
+&MSG(YUI0042).
+:EDL.
+
+:EHELP.
+.* ........................................................................
+:HELP NAME='Z1CACO'.
+CPinCode&MSG(YUI0002).
+:XH2.CPinCode
+:DL.
+:DT.
+CPinCode
+:DD.
+&MSG(YUI0042).
+:EDL.
+
+:EHELP.
+.* ........................................................................
+:EPNLGRP.

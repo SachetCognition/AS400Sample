@@ -1,0 +1,18 @@
+     A*=====================================================================
+     A* Physical File: MOB1CPP
+     A* Description : CollegeDL - College data file
+     A* Maintenance :
+     A*=====================================================================
+     A          R FB1CPE8                   TEXT('CollegeDL')
+     A*---------------------------------------------------------------------
+     A            B1UMC2        15          TEXT('Account ID')
+     A                                      COLHDG('Account ID' )
+     A            B1B9CO         6          TEXT('CName')
+     A                                      COLHDG('CName' )
+     A            B1X8TX        25          TEXT('CCity')
+     A                                      COLHDG('CCity' )
+     A            B1X9TX        25          TEXT('CState')
+     A                                      COLHDG('CState' )
+     A            B1CACO         6          TEXT('CPinCode')
+     A                                      COLHDG('CPinCode' )
+     A*=====================================================================
