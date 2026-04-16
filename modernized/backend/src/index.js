@@ -26,7 +26,7 @@ app.use((err, _req, res, _next) => {
   // Y2U0035 - General processing error
   res.status(500).json({
     error: 'Internal server error',
-    message: err.message,
+    message: process.env.NODE_ENV === 'development' ? err.message : 'An internal error occurred',
     legacyMsgId: 'Y2U0035',
   });
 });

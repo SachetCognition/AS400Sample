@@ -91,7 +91,7 @@ router.get('/', async (req, res, next) => {
         data: [],
         page,
         pageSize,
-        totalCount: 0,
+        totalCount,
         hasMore: false,
         message: 'No data to display',
         legacyMsgId: 'Y2U0008',
