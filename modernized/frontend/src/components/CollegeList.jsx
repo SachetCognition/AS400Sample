@@ -31,6 +31,15 @@ function CollegeList({ onViewCollege, onMessage }) {
       }
 
       const response = await fetch(`${API_BASE}?${params}`);
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        onMessage({
+          type: 'error',
+          text: errData.message || 'Failed to load college data',
+          legacyMsgId: errData.legacyMsgId || 'Y2U0035',
+        });
+        return;
+      }
       const data = await response.json();
 
       setColleges(data.data || []);
