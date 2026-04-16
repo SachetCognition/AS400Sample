@@ -1,0 +1,226 @@
+/* CollegeList styles - replaces ZSFLRCD/ZSFLCTL display formatting */
+
+.college-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Position-to bar - replaces Z2UMC2 input field area */
+.position-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.position-bar label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.position-input {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: monospace;
+  width: 180px;
+  transition: border-color 0.2s;
+  text-transform: uppercase;
+}
+
+.position-input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #cbd5e1;
+}
+
+/* Instructions line */
+.instructions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding: 0 0.25rem;
+}
+
+.option-hint {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.record-count {
+  margin-left: auto;
+  font-family: monospace;
+}
+
+/* Table container */
+.table-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.college-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.college-table thead {
+  background: #f1f5f9;
+}
+
+.college-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+.college-table td {
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.college-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.college-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Column widths */
+.col-opt { width: 60px; text-align: center; }
+.col-account { width: 140px; }
+.col-name { width: 120px; }
+.col-city { width: 180px; }
+.col-state { width: 160px; }
+.col-pin { width: 80px; font-family: monospace; }
+
+/* Option select dropdown */
+.opt-select {
+  width: 40px;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Link button for account ID */
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-family: monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.link-btn:hover {
+  color: var(--primary-dark);
+}
+
+/* Loading and empty states */
+.loading-cell,
+.empty-cell {
+  text-align: center;
+  padding: 2rem !important;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.page-info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .position-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .position-input {
+    width: 100%;
+  }
+
+  .college-table {
+    font-size: 0.8rem;
+  }
+
+  .college-table th,
+  .college-table td {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .col-state {
+    display: none;
+  }
+}

@@ -1,0 +1,92 @@
+/* App layout styles */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header - replaces MODYDFR.dspf header area */
+.app-header {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.header-meta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.program-name {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Main content */
+.app-main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+}
+
+/* Footer */
+.app-footer {
+  background: var(--text);
+  color: var(--text-secondary);
+  padding: 0.75rem 2rem;
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.keyboard-hints {
+  font-family: monospace;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
+}

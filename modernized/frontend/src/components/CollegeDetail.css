@@ -1,0 +1,90 @@
+/* CollegeDetail styles - replaces MODXD1R detail display formatting */
+
+.detail-container {
+  max-width: 600px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.detail-header h2 {
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.detail-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.detail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.field-value {
+  font-size: 1rem;
+  color: var(--text);
+  padding: 0.5rem 0.75rem;
+  background: #f8fafc;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.field-value.monospace {
+  font-family: monospace;
+}
+
+.detail-actions {
+  margin-top: 1.5rem;
+}
+
+.detail-loading {
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.detail-error {
+  padding: 2rem;
+  background: var(--error-bg);
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.detail-error h3 {
+  color: var(--error);
+  margin-bottom: 0.5rem;
+}
+
+.detail-error p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .detail-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+}
