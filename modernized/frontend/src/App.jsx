@@ -61,6 +61,9 @@ function App() {
     setMessage(null);
   }, []);
 
+  // Stable dismiss callback so MessageBar's auto-dismiss timer isn't reset by clock re-renders
+  const handleDismissMessage = useCallback(() => setMessage(null), []);
+
   const formatDate = (date) => {
     return date.toLocaleDateString('en-IN', {
       year: 'numeric',
@@ -111,7 +114,7 @@ function App() {
       </main>
 
       {/* Message bar - replaces ZMSGCTL message subfile from dspf lines 417-424 */}
-      <MessageBar message={message} onDismiss={() => setMessage(null)} />
+      <MessageBar message={message} onDismiss={handleDismissMessage} />
 
       {/* Footer */}
       <footer className="app-footer">
