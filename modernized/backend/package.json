@@ -1,0 +1,20 @@
+{
+  "name": "college-data-api",
+  "version": "1.0.0",
+  "description": "REST API for College Data - Modernized from AS/400 RPG ILE (MODYDFR)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "jest --forceExit --detectOpenHandles"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

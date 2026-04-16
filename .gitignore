@@ -1,0 +1,4 @@
+modernized/backend/.env
+modernized/backend/node_modules/
+modernized/frontend/node_modules/
+modernized/frontend/dist/
