@@ -18,7 +18,7 @@ function CollegeDetail({ accountId, onBack, onMessage }) {
       try {
         const response = await fetch(`/api/colleges/${accountId}`);
         if (!response.ok) {
-          const errData = await response.json();
+          const errData = await response.json().catch(() => ({}));
           // Y2U0032 - Record not found
           setError(errData.message || 'College not found');
           onMessage({
